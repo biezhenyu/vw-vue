@@ -53,13 +53,13 @@ function toApi() {
          * form 请求头格式
          * urlParams  参数拼接url后面
          * prefix 是否以formData格式提交
-         * needOpenId 是否需要openId
          */
 
         // tost配置
-        // @ts-ignore: Unreachable code error
+       let method: any = item.method || 'post';
+       
         return axios({
-          method: item.method || 'post',
+          method,
           url: getUrl(params, item),
           data: params,
           headers: {...headers, ...header}
