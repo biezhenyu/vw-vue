@@ -56,7 +56,7 @@ function toApi() {
          */
 
         // tost配置
-       let method: any = item.method || 'post';
+       const method: any = item.method || 'post';
        
         return axios({
           method,
