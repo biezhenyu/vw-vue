@@ -64,10 +64,8 @@ module.exports = {
    https: false,
    hotOnly: false,
    proxy: {
-    "/iscportal": {
-      
-      // target: 'https://test.huanzhidadi.xin', // 李晓东 本地
-      target: 'https://security.xiaozhionline.com', // 正式
+    "/test": {
+      target: 'http://216.24.177.174:3000', 
       ws: true,
       changeOrigin: true
     }

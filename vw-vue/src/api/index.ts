@@ -41,7 +41,6 @@ function toApi() {
     // 循环模块下的请求配置
     apiConfig[module].forEach((item) => {
 
-
       // 生成对应请求方法
       api[module][item.name] = (params: RequestParams, headers: any = {}, callback: CommonFunc, errorCallback: CommonFunc) => {
         
@@ -56,7 +55,7 @@ function toApi() {
          */
 
         // tost配置
-       const method: any = item.method || 'post';
+        const method: any = item.method || 'post';
        
         return axios({
           method,
@@ -65,17 +64,12 @@ function toApi() {
           headers: {...headers, ...header}
         })
         .then((response: any) => {
+          // if (response.status && response.status !== 200) Toast.fail(response.msg);
           return response ? response.data : {msg: '请求失败，没有返回信息！'};
         })
 
         // 可以在这里修正一些接口返回的不适合的信息
         .then((response: any)  => {
-          if (item.needTost) Toast.clear();
-
-          if (response.status && response.status !== 200) {
-            Toast.fail(response.statusText);
-            return response;
-          }
           
           if (response.returnCode && response.returnCode !== '0000') {
             Toast.fail(response.returnMessage);
@@ -85,7 +79,7 @@ function toApi() {
           return response;
         })
         .catch((error: Error) => {
-          
+          console.log(error);
           Toast.fail('请求报错了！');
           return {
             error,

@@ -18,6 +18,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import $api from '../api/index';
 
 @Component({
   components: {
@@ -28,6 +29,17 @@ export default class Home extends Vue {
   private list: any[] = [];
   private loading: boolean = false;
   private finished: boolean = false;
+
+  private mounted() {
+    this._testApi();
+  }
+
+  private async _testApi(): Promise<any> {
+    const {code = null, data = []} = await $api.login.test();
+    if (code === 0) {
+      console.log(data);
+    }
+  }
 
 
   private onLoad(): void {

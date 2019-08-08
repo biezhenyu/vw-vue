@@ -16,7 +16,7 @@ export type CommonFunc = (ob1: any, ob2?: any, ob3?: any) => object;
 
 // 这些只是方便提示
 interface LoginApi {
-  getBindInfo(params?: RequestParams, headers?: {}, callback?: CommonFunc, errorCallback?: CommonFunc): Promise<any>;
+  test(params?: RequestParams, headers?: {}, callback?: CommonFunc, errorCallback?: CommonFunc): Promise<any>;
   [propName: string]: any;
 }
 

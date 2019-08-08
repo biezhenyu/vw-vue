@@ -9,7 +9,7 @@ import { ApiParams } from '../types/index';
  */
 
 let login: ApiParams[] = [
-  {name: 'getBindInfo', method: 'post', url: '/test/test'},
+  {name: 'test', method: 'post', url: '/test/test'},
 ];
 export default login;
 
