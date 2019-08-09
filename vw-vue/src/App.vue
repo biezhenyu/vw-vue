@@ -10,6 +10,8 @@ img { content: normal !important; }
 .title {
   color: #999;
   font-size: 20px;
+  text-align: center;
+  padding: 10px 0;
 }
 
 </style>

@@ -24,7 +24,7 @@ function formatParams(params: RequestParams) {
 function getUrl(params: RequestParams, item: Params) {
 
  // 判断环境
- let url = process.env.NODE_ENV === "development" ? "" : process.env.apiPath;
+ let url = process.env.NODE_ENV === "development" ? "" : process.env.VUE_APP_APIURL;
  // 判断请求方式
  url += item.method === 'get' ? `${item.url}?${formatParams(params)}` : item.url;
  return url;
