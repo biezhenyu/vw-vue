@@ -28,8 +28,9 @@ import { Button,
   Cell,
   Icon,
   List,
+  Skeleton,
   Toast } from 'vant';
-Vue.use(Button).use(CellGroup).use(Icon).use(List).use(Cell).use(Toast);
+Vue.use(Button).use(CellGroup).use(Icon).use(List).use(Cell).use(Toast).use(Skeleton);
 
 
 new Vue({

@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h3 class="title">测试vw</h3>
+    <van-skeleton title avatar :row="3" />
   </div>
 </template>
 
